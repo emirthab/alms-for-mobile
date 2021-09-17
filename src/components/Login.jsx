@@ -19,8 +19,7 @@ import {
 
 export default function Login() {
     return (
-        <ImageBackground resizeMode="cover" source={require("../static/img/kiz-kulesi.jpg")} style={styles.backgroundImage}>
-            <Layout style={styles.labelWhite} />
+        <Layout style={styles.flexibleArea}>        
             <Image source={require("../static/img/login-header.png")} style={styles.headerImage} />
             <Layout style={styles.mainContainer}>
                 <Text style={styles.alms}>ALMS</Text>
@@ -44,7 +43,7 @@ export default function Login() {
                 </Button>
                 <Text style={styles.footerInfo}> www.uskudar.edu.tr</Text>
             </Layout>
-        </ImageBackground>
+        </Layout>
     )
 }
 
@@ -104,15 +103,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
 
-    labelWhite: {
-        width: "100%",
-        height: "100%",
-        backgroundColor: "white",
-        opacity: 0.85,
-        position: "absolute"
-    },
-
-    backgroundImage: {
-        flex: 1
+    flexibleArea: {
+        flex: 1,
+        backgroundColor:"transparent"
     },
 })
