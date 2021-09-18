@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as eva from '@eva-design/eva';
 import Icon from "react-native-vector-icons/dist/FontAwesome"
 import {
@@ -16,8 +16,18 @@ import {
     Layout,
     Text
 } from '@ui-kitten/components';
+import { getAuthCookies } from "./auth"
 
 export default function Login() {
+    const [username, setUsername] = useState("")
+    const [pass, setPass] = useState("")
+    
+    const handleLogin = () => {
+        getAuthCookies(function(username,pass,callback){
+            console.log(callback)
+        })
+    }
+
     return (
         <Layout style={styles.flexibleArea}>        
             <Image source={require("../static/img/login-header.png")} style={styles.headerImage} />
@@ -27,7 +37,7 @@ export default function Login() {
                     <Text style={styles.inputText}>
                         Öğrenci Numarası
                     </Text>
-                    <Input accessoryLeft={iconUser} status="warning" style={styles.input}>
+                    <Input onChangeText={setUsername} accessoryLeft={iconUser} status="warning" style={styles.input}>
                     </Input>
                 </Layout>
 
@@ -35,10 +45,10 @@ export default function Login() {
                     <Text style={styles.inputText}>
                         Şifre
                     </Text>
-                    <Input accessoryLeft={iconPass} status="warning" style={styles.input}>
+                    <Input secureTextEntry={true} onChangeText={setPass} accessoryLeft={iconPass} status="warning" style={styles.input}>
                     </Input>
                 </Layout>
-                <Button status="warning" style={styles.button}>
+                <Button onPress={() => handleLogin()} status="warning" style={styles.button}>
                     Giriş Yap
                 </Button>
                 <Text style={styles.footerInfo}> www.uskudar.edu.tr</Text>

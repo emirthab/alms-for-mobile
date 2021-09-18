@@ -1,8 +1,6 @@
 import React from 'react';
-import Login from "./components/Login"
 import * as eva from "@eva-design/eva"
 import type { Node } from 'react';
-import Navigation from "./components/Navigation"
 import { default as theme } from "./static/theme.json"
 
 import {
@@ -10,12 +8,15 @@ import {
 } from '@ui-kitten/components';
 import { ImageBackground, StyleSheet, View} from 'react-native';
 
+import Navigation from "./components/Navigation"
+import Login from "./components/Login"
+
 const App: () => Node = () => {
   return (
     <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
       <ImageBackground resizeMode="cover" source={require("./static/img/kiz-kulesi.jpg")} style={styles.backgroundImage}>
         <View style={styles.labelWhite} />
-        <Navigation />
+        <Login/>
       </ImageBackground>
     </ApplicationProvider>
 
