@@ -10,9 +10,8 @@ const { Navigator, Screen } = createMaterialTopTabNavigator();
 
 export default function Home() {
     return (
-        <Navigator tabBar={props => <TopTabBar {...props} />}            
-            sceneContainerStyle={{ backgroundColor: "transparent" }}>
-
+        <Navigator 
+            tabBar={ props => <TopTabBar {...props} />}>
             <Screen name='Aktiviteler' component={Activities} />
             <Screen name='Duyurular' component={Announcements} />
         </Navigator>
@@ -20,7 +19,7 @@ export default function Home() {
 }
 
 const TopTabBar = ({ navigation, state }) => (
-    <TabBar        
+    <TabBar                
         selectedIndex={state.index}
         onSelect={index => navigation.navigate(state.routeNames[index])}>
         <Tab title='Aktivitelerim' />

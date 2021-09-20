@@ -43,11 +43,12 @@ const BottomTabBar = ({ navigation, state }) => (
                     name="user" />} />
     </BottomNavigation>
 );
+
 export default function App() {
     return (
         <NavigationContainer>
             <Header />
-            <Tab.Navigator
+            <Tab.Navigator            
                 sceneContainerStyle={{ backgroundColor: "transparent" }}
                 tabBar={props => <BottomTabBar {...props} />}
                 screenOptions={{headerShown: false }}>

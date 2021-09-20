@@ -23,7 +23,7 @@ export default function Login() {
     const [pass, setPass] = useState("")
     
     const handleLogin = () => {
-        getAuthCookies(function(username,pass,callback){
+        getAuthCookies(function(callback){
             console.log(callback)
         })
     }

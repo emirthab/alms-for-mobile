@@ -16,7 +16,7 @@ const App: () => Node = () => {
     <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
       <ImageBackground resizeMode="cover" source={require("./static/img/kiz-kulesi.jpg")} style={styles.backgroundImage}>
         <View style={styles.labelWhite} />
-        <Login/>
+        <Navigation></Navigation>
       </ImageBackground>
     </ApplicationProvider>
 
