@@ -35,15 +35,21 @@ function mainModal({ navigation }) {
             <Layout style={styles.mainContainer}>
                 <Text style={styles.heading1}>Duyurular</Text>
                 <Card
-                headerIconName="bullhorn"
-                contentIconName="user"
-                contentIconColor="grey"
-                title="Makeup Exam Announcement"
-                Text="Fatih Mehmet Coşkun - "
-                subText="13.09.2021"
-                onPress={() => {
-                    navigation.navigate("annoModal")
-                }} />
+                    headerIconName="bullhorn"
+                    title="Makeup Exam Announcement"
+                    mainContent={[{
+                        text: "Fatih Mehmet Coşkun - ",
+                        iconName: "user",
+                        iconColor: "grey"
+                    },
+                    {
+                        iconName:"clock-o",
+                        iconColor:"grey",
+                        text:"13.09.2021"
+                    }]}
+                    onPress={() => {
+                        navigation.navigate("annoModal")
+                    }} />
             </Layout>
         </ScrollView>
     )

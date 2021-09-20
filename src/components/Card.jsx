@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet } from "react-native"
 import {
     Layout,
-    Text,    
+    Text,
 } from '@ui-kitten/components';
-import { Card as Cardd}  from "@ui-kitten/components"
+import { Card as Cardd } from "@ui-kitten/components"
 import Icon from "react-native-vector-icons/dist/FontAwesome"
 
 const StylizedIcon = (props) => {
@@ -48,24 +48,22 @@ export default function Card(props) {
                     borderLeftWidth: 7,
                     borderLeftColor: props.borderColor ? props.borderColor : "#16a9a8"
                 }}
-                header={Header(props = props)}>
-                <Layout style={styles.headerContainer}>
-                    {props.contentIconName &&
-                        <StylizedIcon
-                            name={props.contentIconName}
-                            size={props.contentIconSize}
-                            color={props.contentIconColor}
-                        />}
 
-                    {props.Text &&
+                header={Header(props = props)}>
+                {props.mainContent.map((_con, i) => (
+                    <Layout style={styles.headerContainer}>
+                        <StylizedIcon
+                            name={_con.iconName}
+                            size={_con.iconSize}
+                            color={_con.iconColor} />
                         <Text style={styles.mainText}>
-                            {props.Text}
-                            {props.subText &&
-                                <Text style={styles.subText}>
-                                    {props.subText}
-                                </Text>}
-                        </Text>}
-                </Layout>
+                            {_con.text}
+                            <Text style={styles.subText}>
+                                {_con.subText}
+                            </Text>
+                        </Text>
+                    </Layout>
+                ))}
                 {props.content}
             </Cardd>
         </Layout >
@@ -79,6 +77,7 @@ const styles = StyleSheet.create(
             shadowColor: "grey",
             shadowOpacity: 0.30,
             marginTop: 20,
+            borderRadius:6
         },
         mainText: {
             marginTop: 2,
@@ -88,6 +87,7 @@ const styles = StyleSheet.create(
         },
 
         headerContainer: {
+            paddingBottom:7,
             backgroundColor: "transparent",
             flexDirection: "row",
         },

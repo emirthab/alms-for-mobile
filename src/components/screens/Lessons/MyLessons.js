@@ -12,8 +12,10 @@ import { createStackNavigator } from "@react-navigation/stack"
 import Card from '../../Card';
 import LessonModal from "./LessonModal";
 import Progress from './Progress';
+import ActivityModals from "./ActivityModals"
 
 const Nav = createStackNavigator();
+
 
 export default function MyLessons() {
     return (
@@ -26,6 +28,10 @@ export default function MyLessons() {
             <Nav.Group>
                 <Nav.Screen name="lessonModal" component={LessonModal} />
             </Nav.Group>
+
+            <Nav.Group>
+                <Nav.Screen name="activityModal" component={ActivityModals} />
+            </Nav.Group>
         </Nav.Navigator>
     )
 }
@@ -37,23 +43,14 @@ function mainModal({ navigation }) {
                 <Text style={styles.heading1}>Derslerim</Text>
                 <Card
                     headerIconName={"book"}
-                    contentIconName={"user"}
-                    contentIconColor={"grey"}
                     borderColor="#fab614"
-                    title="Basic Linear Algebra"
-                    Text="Emine Elif Tülay"
-                    content={<Progress percentage={40} />}
-                    onPress={() => {
-                        navigation.navigate("lessonModal")
-                    }} />
-
-                <Card
-                    headerIconName={"book"}
-                    contentIconName={"user"}
-                    contentIconColor={"grey"}
-                    title="Calculus"
-                    Text="Burhan Bektaş"
-                    content={<Progress percentage={70} />}
+                    title="Kütüphane ve Akademik Araştırma Eğitimleri"
+                    mainContent={[{
+                        iconColor: "grey",
+                        iconName: "user",
+                        text: "Sinan Eker"
+                    }]}
+                    content={<Progress percentage={60} />}
                     onPress={() => {
                         navigation.navigate("lessonModal")
                     }} />
@@ -61,6 +58,7 @@ function mainModal({ navigation }) {
         </ScrollView>
     )
 }
+
 const styles = StyleSheet.create({
     mainContainer: {
         margin: 25,

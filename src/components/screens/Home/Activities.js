@@ -17,20 +17,25 @@ export default function Activities() {
             <Layout style={styles.mainContanier}>
                 <Text style={styles.heading1}>Yakında Başlayacak Aktivileterim</Text>
                 <Card
+                    headerIconName="video-camera"
                     borderColor="#fab614"
-                    headerIconName="video-camera"
-                    contentIconName="play"
-                    contentIconColor="grey"
                     title="Calculus / Burhan Bektaş"
-                    Text="Canlı 21.09.2021"
+                    mainContent={[{
+                        iconColor: "grey",
+                        iconName: "play",
+                        text: "Canlı - ",
+                        subText: "12.03.2021"
+                    }]}
                 />
-
-                <Card                    
+                <Card
                     headerIconName="video-camera"
-                    contentIconName="play"
-                    contentIconColor="grey"
+                    mainContent={[{
+                        iconColor: "grey",
+                        iconName: "play",
+                        text: "Canlı - ",
+                        subText: "12.03.2021"
+                    }]}
                     title="Calculus / Burhan Bektaş"
-                    Text="Canlı 21.09.2021"
                 />
             </Layout>
         </ScrollView>

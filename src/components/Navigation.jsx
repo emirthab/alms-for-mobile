@@ -10,6 +10,8 @@ import Header from "./Header"
 
 import Home from "./screens/Home"
 import Lesson from "./screens/Lessons"
+import Messages from "./screens/Messages"
+import Profile from "./screens/Profile"
 
 const Tab = createBottomTabNavigator();
 
@@ -48,14 +50,14 @@ export default function App() {
     return (
         <NavigationContainer>
             <Header />
-            <Tab.Navigator            
+            <Tab.Navigator
                 sceneContainerStyle={{ backgroundColor: "transparent" }}
                 tabBar={props => <BottomTabBar {...props} />}
                 screenOptions={{headerShown: false }}>
                 <Tab.Screen name="Ana Sayfa" component={Home} />
                 <Tab.Screen name="Derslerim" component={Lesson} />
-                <Tab.Screen name="Profil" component={Home} />
-                <Tab.Screen name="set" component={Home} />
+                <Tab.Screen name="Profil" component={Messages} />
+                <Tab.Screen name="set" component={Profile} />
             </Tab.Navigator>
         </NavigationContainer>
 
