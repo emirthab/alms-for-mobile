@@ -1,4 +1,4 @@
-<h1 align="center"ALMS-FOR-MOBILE</h1>
+<h1 align="center"ALMS FOR MOBILE</h1>
 
 
 <p align="center">
