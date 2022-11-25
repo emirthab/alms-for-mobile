@@ -3,7 +3,7 @@ import React from "react";
 export function getAuthCookies(callback) {
     var url = "https://lms.uskudar.edu.tr/"
     var Form = new FormData()
-    Form.append("Password", "e7f75502")
+    Form.append("Password", "YourPass")
 
     var options = {
         method: 'POST',
@@ -11,7 +11,7 @@ export function getAuthCookies(callback) {
         redirect: 'follow',
         credentials: 'same-origin',
         Headers: {
-            Cookie: "CookuserName=190201040",
+            Cookie: "CookuserName=YourStudentId",
         },
     }
     fetch(url, options)        
